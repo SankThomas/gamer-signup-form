@@ -3,6 +3,7 @@ import {
   type ChangeEvent,
   type SyntheticEvent,
   type ReactNode,
+  type FocusEvent,
 } from "react";
 import { LoaderCircle } from "lucide-react";
 import {
@@ -107,7 +108,7 @@ export default function App() {
 
     return (
       <span className="error-content">
-        <img src="/icon-alert.svg" />
+        <img src="/icon-alert.svg" alt="" />
         {message}
       </span>
     );
@@ -118,7 +119,7 @@ export default function App() {
     setField(name as SignupField, type === "checkbox" ? checked : value);
   }
 
-  function blurField(event: ChangeEvent<HTMLInputElement>): void {
+  function blurField(event: FocusEvent<HTMLInputElement>): void {
     touchField(event.target.name as SignupField);
   }
 
@@ -176,7 +177,7 @@ export default function App() {
             <div className="card-corner top-corner" aria-hidden="true" />
             <div className="card-corner bottom-corner" aria-hidden="true" />
             <div className="success-icon">
-              <img src="/icon-hex-check.svg" />
+              <img src="/icon-hex-check.svg" alt="" />
             </div>
             <h1>
               <span>//</span> HANDSHAKE COMPLETE
@@ -271,7 +272,11 @@ export default function App() {
                   aria-describedby="callsign-hint callsign-error"
                 />
                 {isFieldValid("callsign") && (
-                  <img src="/icon-tick-20.svg" className="field-valid-icon" />
+                  <img
+                    src="/icon-tick-20.svg"
+                    alt=""
+                    className="field-valid-icon"
+                  />
                 )}
               </div>
 
@@ -302,7 +307,11 @@ export default function App() {
                   aria-describedby="email-error"
                 />
                 {isFieldValid("email") && (
-                  <img src="/icon-tick-20.svg" className="field-valid-icon" />
+                  <img
+                    src="/icon-tick-20.svg"
+                    alt=""
+                    className="field-valid-icon"
+                  />
                 )}
               </div>
               <p className="error" id="email-error" role="alert">
@@ -330,6 +339,7 @@ export default function App() {
                 {isFieldValid("password") && (
                   <img
                     src="/icon-tick-20.svg"
+                    alt=""
                     className="field-valid-icon password-valid-icon"
                   />
                 )}
@@ -340,9 +350,9 @@ export default function App() {
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? (
-                    <img src="/icon-eye-off.svg" />
+                    <img src="/icon-eye-off.svg" alt="" />
                   ) : (
-                    <img src="/icon-eye.svg" />
+                    <img src="/icon-eye.svg" alt="" />
                   )}
                 </button>
               </div>
@@ -397,7 +407,11 @@ export default function App() {
                   aria-describedby="confirm-error"
                 />
                 {isFieldValid("confirmPassword") && (
-                  <img src="/icon-tick-20.svg" className="field-valid-icon" />
+                  <img
+                    src="/icon-tick-20.svg"
+                    alt=""
+                    className="field-valid-icon"
+                  />
                 )}
                 <button
                   className="icon-button"
@@ -410,9 +424,9 @@ export default function App() {
                   }
                 >
                   {showConfirmPassword ? (
-                    <img src="/icon-eye-off.svg" />
+                    <img src="/icon-eye-off.svg" alt="" />
                   ) : (
-                    <img src="/icon-eye.svg" />
+                    <img src="/icon-eye.svg" alt="" />
                   )}
                 </button>
               </div>
@@ -434,7 +448,7 @@ export default function App() {
                   aria-describedby="terms-error"
                 />
                 {values.terms && (
-                  <img src="/icon-tick-16.svg" className="terms-check" />
+                  <img src="/icon-tick-16.svg" alt="" className="terms-check" />
                 )}
               </span>
 
